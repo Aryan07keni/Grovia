@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grovia - Kirana Products Clean View</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2bee6c",
+                        "saffron": "#FF9933",
+                        "emerald-custom": "#10b981",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style type="text/tailwindcss">
+        :root {
+            --nav-active: #FF9933;
+            --nav-inactive: #61896f;
+            --badge-emerald: #10b981;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .veg-icon {
+            width: 12px;
+            height: 12px;
+            border: 1px solid #108a00;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 2px;
+            background: white;
+        }
+        .veg-dot {
+            width: 6px;
+            height: 6px;
+            background-color: #108a00;
+            border-radius: 50%;
+        }
+    </style>
+<style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111813] dark:text-white min-h-screen">
+<header class="sticky top-0 z-50 bg-white dark:bg-[#102216] shadow-sm">
+<div class="flex items-center p-4 pb-2 justify-between">
+<div class="text-[#111813] dark:text-white flex size-10 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back</span>
+</div>
+<div class="flex-1 px-2">
+<h2 class="text-[#111813] dark:text-white text-lg font-bold leading-tight tracking-tight">Grovia Kirana Store</h2>
+<div class="flex items-center gap-1 text-[#61896f] dark:text-primary/70">
+<span class="material-symbols-outlined text-sm">location_on</span>
+<p class="text-xs font-medium">HSR Layout, Bangalore</p>
+</div>
+</div>
+<div class="flex w-10 items-center justify-end">
+<button class="flex items-center justify-center size-10 bg-transparent text-[#111813] dark:text-white relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute top-1 right-1 bg-primary text-[#102216] text-[10px] font-bold h-4 w-4 rounded-full flex items-center justify-center">2</span>
+</button>
+</div>
+</div>
+<div class="px-4 py-2">
+<label class="flex flex-col min-w-40 h-11 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full overflow-hidden">
+<div class="text-[#61896f] flex border-none bg-white border dark:bg-[#1a2e21] items-center justify-center pl-4">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden text-[#111813] dark:text-white focus:outline-0 focus:ring-0 border-none bg-white dark:bg-[#1a2e21] h-full placeholder:text-[#61896f] px-3 text-sm font-normal leading-normal" placeholder="Search for Atta, Dal, etc." value=""/>
+</div>
+</label>
+</div>
+<div class="flex gap-3 px-4 py-3 overflow-x-auto no-scrollbar">
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-primary px-4 border border-primary">
+<span class="material-symbols-outlined text-black text-lg">bakery_dining</span>
+<p class="text-black text-sm font-semibold leading-normal">Atta &amp; Dal</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-[#1a2e21] px-4 border border-[#dbe6df] dark:border-[#2a3e31]">
+<span class="material-symbols-outlined text-[#111813] dark:text-white text-lg">soup_kitchen</span>
+<p class="text-[#111813] dark:text-white text-sm font-medium leading-normal">Spices</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-[#1a2e21] px-4 border border-[#dbe6df] dark:border-[#2a3e31]">
+<span class="material-symbols-outlined text-[#111813] dark:text-white text-lg">cookie</span>
+<p class="text-[#111813] dark:text-white text-sm font-medium leading-normal">Biscuits</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-[#1a2e21] px-4 border border-[#dbe6df] dark:border-[#2a3e31]">
+<span class="material-symbols-outlined text-[#111813] dark:text-white text-lg">rice_bowl</span>
+<p class="text-[#111813] dark:text-white text-sm font-medium leading-normal">Rice</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-xl bg-white dark:bg-[#1a2e21] px-4 border border-[#dbe6df] dark:border-[#2a3e31]">
+<span class="material-symbols-outlined text-[#111813] dark:text-white text-lg">coffee</span>
+<p class="text-[#111813] dark:text-white text-sm font-medium leading-normal">Tea</p>
+</div>
+</div>
+</header>
+<main class="p-4 pb-28">
+<div class="mb-6 w-full h-24 rounded-xl bg-gradient-to-r from-primary/30 to-primary/10 flex items-center p-4 overflow-hidden relative border border-primary/20">
+<div class="z-10">
+<p class="text-[#102216] text-xs font-bold uppercase tracking-wider">Flash Sale</p>
+<h3 class="text-[#102216] text-lg font-bold leading-tight">Up to 20% off on<br/>Aashirvaad Range</h3>
+</div>
+<div class="absolute right-[-10px] top-[-10px] opacity-20">
+<span class="material-symbols-outlined text-[100px]">local_mall</span>
+</div>
+</div>
+<div class="flex justify-between items-center mb-4">
+<h3 class="text-base font-bold dark:text-white">Atta, Rice &amp; Dal</h3>
+<p class="text-primary text-sm font-semibold">View all</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="flex flex-col bg-white dark:bg-[#1a2e21] rounded-xl overflow-hidden shadow-sm border border-[#dbe6df]/50 dark:border-[#2a3e31]">
+<div class="relative w-full aspect-square bg-[#f0f4f2] dark:bg-[#102216] flex items-center justify-center p-4">
+<div class="absolute top-2 left-2 z-10">
+<div class="veg-icon"><div class="veg-dot"></div></div>
+</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-contain" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAQVvvl34W6mUCB8F2d5bqkC8AnSrwv30k5ZMm5DKCHm7O67BNYn8uBObJ33yAJInBu1WS7COC476HfxyMIZTnjgz5FqI7GXaUjJo8GiZhnDz6_LwZ4bE4AFJWpQPt5tRYpno_RgxMUZjTmN9kjPPlwXXRIIZg5u9hr5SB-Afzd2L_jAHcQ0Ibt_q4XMIwgLADksdcvm6dbNft7ZZ4s9cEYKrZ1BWPGXw49jf895vRTB3kq_dNUtyLp04urCKhokw1tDrJ-isnYDJA");'></div>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<p class="text-[10px] font-bold uppercase text-[#61896f] tracking-wide">Aashirvaad</p>
+<p class="text-[#111813] dark:text-white text-sm font-semibold leading-tight mb-1 h-10 line-clamp-2">Select Sharbati Whole Wheat Atta</p>
+<p class="text-[#61896f] text-xs font-medium mb-2">5 kg</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex flex-col">
+<p class="text-[#111813] dark:text-white text-sm font-bold">₹265</p>
+<p class="text-[#61896f] text-[10px] line-through">₹290</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-[#102216] px-3 py-1.5 rounded-lg flex items-center gap-1 font-bold text-xs">
+<span class="material-symbols-outlined text-sm">add</span> ADD
+                        </button>
+</div>
+</div>
+</div>
+<div class="flex flex-col bg-white dark:bg-[#1a2e21] rounded-xl overflow-hidden shadow-sm border border-[#dbe6df]/50 dark:border-[#2a3e31]">
+<div class="relative w-full aspect-square bg-[#f0f4f2] dark:bg-[#102216] flex items-center justify-center p-4">
+<div class="absolute top-2 left-2 z-10">
+<div class="veg-icon"><div class="veg-dot"></div></div>
+</div>
+<div class="w-full h-full bg-center bg-no-repeat bg-contain" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuALPZlGLiCLy6u1qPEvtyzdQyhVzjsnPtaU3WQTV935fNWy065gc7-5ejVPFf3Qy58zWBaYGiEP82vM4DuyeFhba42uFT6D5jXgn9ZjpoeITNV0Lai-X28AXJIB2spcR-FHvFrfXIB24JSnpqysad_m2TsYwOoH98XciTTK-kick1aJzP10hoxi-9_KOLiUR5T36HlQruBQCONDeykq6VRnAzGYSMv0bqRzxtRo-d7Bi3g2kEzNCBazwBgSSu1LTqw9pm4Zyj9Qio0");'></div>
+</div>
+<div class="p-3 flex flex-col flex-1">
+<p class="text-[10px] font-bold uppercase text-[#61896f] tracking-wide">Amul</p>
+<p class="text-[#111813] dark:text-white text-sm font-semibold leading-tight mb-1 h-10 line-clamp-2">Gold Full Cream Milk</p>
+<p class="text-[#61896f] text-xs font-medium mb-2">1 L</p>
+<div class="mt-auto flex items-center justify-between">
+<div class="flex flex-col">
+<p class="text-[#111813] dark:text-white text-sm font-bold">₹66</p>
+<p class="text-transparent text-[10px]">.</p>
+</div>
+<button class="bg-primary hover:bg-primary/90 text-[#102216] px-3 py-1.5 rounded-lg flex items-center gap-1 font-bold text-xs">
+<span class="material-symbols-outlined text-sm">add</span> ADD
+                        </button>
+</div>
+</div>
+</div>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 bg-white dark:bg-[#102216] border-t border-[#dbe6df] dark:border-[#2a3e31] px-4 py-3 pb-6 flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-1 text-saffron">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1">home</span>
+<span class="text-[10px] font-bold">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#61896f]">
+<span class="material-symbols-outlined">search</span>
+<span class="text-[10px] font-medium">Search</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#61896f]">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-medium">Orders</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#61896f] relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="text-[10px] font-medium">Cart</span>
+<span class="absolute -top-1 -right-2 bg-emerald-custom text-white text-[8px] font-bold h-4 w-4 rounded-full flex items-center justify-center border border-white dark:border-[#102216]">2</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-[#61896f]">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</div>
+</nav>
+
+</body></html>

@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Payment Options - Grovia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#11d462",
+                        "accent-saffron": "#FF9933",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>.mandala-bg {
+    background-image: radial-gradient(circle at center, transparent 0%, transparent 100%), url(https://lh3.googleusercontent.com/aida-public/AB6AXuAcN0L1Ef0IIDZtysGl-uQHxC5aGYLGcqeMo8mOxLlJGqHGdaUJHvPR3hCGSo6jrfLjkKu7M1NZ5OEWW0C9mXgYy2FG6h4DhVXfccVVOaxxsGJxRIjvxhfqCEFQOCiecMr7u0K-Fk7XcDnCH2rQ6XNWbjYWdIzN6Ovh-bE-q3NgRkWzHvAVCd5d7R5OqTbjf7cXdSL9aTjcjdA4HgxDTeQQRDE2c_qKkk5M747893t_scPnEtpGFm9AVbmCDsGdBOW2Z9PQraaE4Jo);
+    background-repeat: repeat;
+    background-size: 120px
+    }</style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark min-h-screen mandala-bg">
+<div class="relative mx-auto max-w-[430px] min-h-screen flex flex-col pb-32">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-20 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md">
+<div class="flex items-center p-4 justify-between">
+<div class="text-[#111814] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h2 class="text-[#111814] dark:text-white text-lg font-bold leading-tight tracking-tight flex-1 text-center pr-12">Payment Options</h2>
+</div>
+</div>
+<!-- Total Payable Card -->
+<div class="px-4 py-2">
+<div class="flex items-center justify-between gap-4 rounded-xl bg-white dark:bg-gray-800 p-5 shadow-sm border border-gray-100 dark:border-gray-700">
+<div class="flex flex-col gap-1">
+<p class="text-gray-500 dark:text-gray-400 text-sm font-medium">Total Payable</p>
+<p class="text-[#111814] dark:text-white text-2xl font-extrabold">₹842</p>
+</div>
+<div class="h-12 w-12 bg-primary/10 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-3xl">shopping_bag</span>
+</div>
+</div>
+</div>
+<!-- Section: UPI -->
+<div class="mt-4">
+<h3 class="text-[#111814] dark:text-white text-lg font-bold px-4 pb-3">UPI Payments</h3>
+<div class="flex flex-col gap-1 bg-white dark:bg-gray-800 mx-4 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700">
+<!-- Google Pay -->
+<div class="flex items-center gap-4 px-4 py-4 justify-between border-b border-gray-50 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-blue-500">account_balance_wallet</span>
+</div>
+<p class="text-[#111814] dark:text-white text-base font-medium">Google Pay</p>
+</div>
+<div class="shrink-0">
+<input checked="" class="h-5 w-5 text-primary border-gray-300 focus:ring-primary dark:bg-gray-700" name="payment_method" type="radio"/>
+</div>
+</div>
+<!-- PhonePe -->
+<div class="flex items-center gap-4 px-4 py-4 justify-between border-b border-gray-50 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-purple-600">payments</span>
+</div>
+<p class="text-[#111814] dark:text-white text-base font-medium">PhonePe</p>
+</div>
+<div class="shrink-0">
+<input class="h-5 w-5 text-primary border-gray-300 focus:ring-primary dark:bg-gray-700" name="payment_method" type="radio"/>
+</div>
+</div>
+<!-- Paytm -->
+<div class="flex items-center gap-4 px-4 py-4 justify-between border-b border-gray-50 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-sky-500">currency_rupee</span>
+</div>
+<p class="text-[#111814] dark:text-white text-base font-medium">Paytm</p>
+</div>
+<div class="shrink-0">
+<input class="h-5 w-5 text-primary border-gray-300 focus:ring-primary dark:bg-gray-700" name="payment_method" type="radio"/>
+</div>
+</div>
+<!-- Custom UPI ID -->
+<div class="flex items-center gap-4 px-4 py-4 justify-between hover:bg-gray-50 dark:hover:bg-gray-700/50 cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">add</span>
+</div>
+<p class="text-primary text-base font-semibold">Pay via UPI ID</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Section: Cash on Delivery -->
+<div class="mt-6">
+<h3 class="text-[#111814] dark:text-white text-lg font-bold px-4 pb-3">Pay on Delivery</h3>
+<div class="mx-4 p-4 bg-white dark:bg-gray-800 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+<div class="flex items-start justify-between">
+<div class="flex gap-4">
+<div class="bg-accent-saffron/10 rounded-lg p-2 flex items-center justify-center h-10 w-10">
+<span class="material-symbols-outlined text-accent-saffron">box</span>
+</div>
+<div>
+<p class="text-[#111814] dark:text-white text-base font-medium">Cash on Delivery</p>
+<div class="flex items-center gap-1.5 mt-1">
+<span class="material-symbols-outlined text-[14px] text-gray-400">info</span>
+<p class="text-gray-500 dark:text-gray-400 text-xs">Please keep exact change ready</p>
+</div>
+</div>
+</div>
+<input class="h-5 w-5 mt-1 text-primary border-gray-300 focus:ring-primary dark:bg-gray-700" name="payment_method" type="radio"/>
+</div>
+</div>
+</div>
+<!-- Section: Other Options -->
+<div class="mt-6">
+<h3 class="text-[#111814] dark:text-white text-lg font-bold px-4 pb-3">More Ways to Pay</h3>
+<div class="flex flex-col gap-1 bg-white dark:bg-gray-800 mx-4 rounded-xl overflow-hidden shadow-sm border border-gray-100 dark:border-gray-700">
+<!-- Cards -->
+<div class="flex items-center gap-4 px-4 py-4 justify-between border-b border-gray-50 dark:border-gray-700 cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">credit_card</span>
+</div>
+<p class="text-[#111814] dark:text-white text-base font-medium">Credit / Debit Cards</p>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+<!-- Netbanking -->
+<div class="flex items-center gap-4 px-4 py-4 justify-between cursor-pointer">
+<div class="flex items-center gap-4">
+<div class="bg-gray-100 dark:bg-gray-700 rounded-lg p-2 flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-600 dark:text-gray-300">account_balance</span>
+</div>
+<p class="text-[#111814] dark:text-white text-base font-medium">Netbanking</p>
+</div>
+<span class="material-symbols-outlined text-gray-400">chevron_right</span>
+</div>
+</div>
+</div>
+<!-- Trust Footer -->
+<div class="mt-8 flex flex-col items-center justify-center gap-2 opacity-60">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">verified_user</span>
+<span class="text-xs font-medium uppercase tracking-wider">100% Secure Payments</span>
+</div>
+<div class="flex gap-4 grayscale opacity-50">
+<div class="h-4 w-8 bg-gray-400 rounded-sm"></div>
+<div class="h-4 w-8 bg-gray-400 rounded-sm"></div>
+<div class="h-4 w-8 bg-gray-400 rounded-sm"></div>
+</div>
+</div>
+<!-- Sticky Bottom CTA -->
+<div class="fixed bottom-0 left-0 right-0 p-4 bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl border-t border-gray-100 dark:border-gray-800 max-w-[430px] mx-auto z-30">
+<button class="w-full bg-primary hover:bg-primary/90 text-white font-bold py-4 rounded-xl flex items-center justify-center gap-2 shadow-lg shadow-primary/20 transition-all active:scale-[0.98]">
+<span>Pay Now</span>
+<span class="material-symbols-outlined">arrow_forward</span>
+</button>
+<div class="h-6"></div> <!-- Safe area for iOS Home Indicator -->
+</div>
+</div>
+</body></html>

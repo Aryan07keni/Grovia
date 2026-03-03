@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grovia - Indian Store Selection</title>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#E65100", // Deep Orange
+              "secondary": "#2E7D32", // Indian Green
+              "accent": "#FFD700", // Gold
+              "background-light": "#FFFBF2", // Warm cream
+              "background-dark": "#1A140F",
+            },
+            fontFamily: {
+              "display": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "1rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style type="text/tailwindcss">
+        @layer base {
+            body {
+                font-family: "Plus Jakarta Sans", sans-serif;
+                min-height: 100dvh;
+            }
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .filled-icon {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }.veg-toggle:checked ~ .toggle-bg {
+            @apply bg-secondary;
+        }
+        .veg-toggle:checked ~ .toggle-dot {
+            transform: translateX(20px);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark text-[#2D241E] dark:text-white pb-24">
+<header class="sticky top-0 z-50 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md px-4 pt-6 pb-2">
+<div class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<div class="bg-primary/10 p-2 rounded-full text-primary border border-primary/20">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div>
+<p class="text-[10px] uppercase tracking-wider font-bold text-primary/70">Delivering to</p>
+<div class="flex items-center gap-1">
+<span class="text-sm font-bold leading-tight">Home • HSR Layout, Sector 2</span>
+<span class="material-symbols-outlined text-sm text-primary">keyboard_arrow_down</span>
+</div>
+</div>
+</div>
+<button class="size-10 rounded-full bg-white dark:bg-gray-800 flex items-center justify-center shadow-sm border border-orange-100 dark:border-gray-700">
+<span class="material-symbols-outlined text-primary">account_circle</span>
+</button>
+</div>
+</header>
+<section class="px-4 py-4 space-y-4">
+<div class="flex items-center gap-3">
+<label class="relative flex items-center flex-1">
+<div class="absolute left-4 text-primary/50 flex items-center">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="w-full h-12 bg-white dark:bg-gray-800 border-none rounded-xl pl-12 pr-4 text-sm font-medium focus:ring-2 focus:ring-primary shadow-sm placeholder:text-gray-400" placeholder="Search biryani, atta or masalas" type="text"/>
+</label>
+<div class="flex flex-col items-center justify-center bg-white dark:bg-gray-800 h-12 px-3 rounded-xl shadow-sm border border-gray-100 dark:border-gray-700">
+<label class="relative inline-flex items-center cursor-pointer">
+<input checked="" class="sr-only veg-toggle" type="checkbox"/>
+<div class="toggle-bg w-10 h-5 bg-gray-200 rounded-full transition-colors duration-200"></div>
+<div class="toggle-dot absolute left-0.5 top-0.5 bg-white w-4 h-4 rounded-full transition-transform duration-200 shadow-sm"></div>
+</label>
+<span class="text-[8px] font-bold uppercase tracking-tighter mt-0.5 text-secondary">Veg Only</span>
+</div>
+</div>
+</section>
+<section class="px-4 py-2 overflow-x-auto no-scrollbar">
+<div class="flex gap-4 pb-2">
+<div class="relative flex-shrink-0 w-40 h-48 rounded-2xl bg-[#FFE0B2] group cursor-pointer overflow-hidden border-2 border-primary/10">
+<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDBzc_0ZnCwPEabQDqOjyRxgizHsLMfIq1m5TOlbc1Sf1JpLgUKAPhAhnYNjDUVM_n_CiUVoI9Mh5Cg6efo0xI0zE6IkjDxCd_bk-lrwpIn4WEF_OnYJ8RqH9kvGv-r_MjXAOerv7RGURucIS8Q2YoifDqq5c-pT1eeUlOfE-Tbew3_8AuUdg7BcA3LhUiYrUvoKLUVFJA9br0HcRwyuRu6UI-NH3-czI1KqxpRvnETXcHy60sZZPVlPYTwaDZlDBTTZjWVJU_qNgQ');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-orange-900/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 pr-2">
+<h3 class="text-white text-lg font-extrabold leading-tight">Kirana &amp; Masalas</h3>
+<p class="text-accent text-[10px] font-bold uppercase tracking-wider">Spices &amp; Pantry</p>
+</div>
+<div class="absolute top-4 right-4 bg-accent/90 rounded-full p-2 text-primary shadow-lg">
+<span class="material-symbols-outlined text-[20px] filled-icon">local_mall</span>
+</div>
+</div>
+<div class="relative flex-shrink-0 w-40 h-48 rounded-2xl bg-[#C8E6C9] group cursor-pointer overflow-hidden border-2 border-secondary/10">
+<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCfC9FxRO1opp5JNFk-zlN9q5KBefz1zkB5bkU2kPw2eeINHL8alJPa5C_SLgmCfaGBHTsXkLv4JdYIWzf5AP8K45KnZVfWhxwFGSwTGu-4Hx0b9a74Lnh0b42RCsvQNNh8rAZKzp6pnthavQezOGkAD9_sFNgZXPwuew0gEKISZio0JkODCvkEvzRbn_NDc8_dqSKX9mZZ3bcYIMZRNpQUp9G7wiEPbmD3vxUX3LvYGUO6ITu8RoTVQ9PFsp5D-4d1_Lm9QgrfSMI');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-green-900/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 pr-2">
+<h3 class="text-white text-lg font-extrabold leading-tight">Organic Staples</h3>
+<p class="text-accent text-[10px] font-bold uppercase tracking-wider">Farm Fresh</p>
+</div>
+<div class="absolute top-4 right-4 bg-accent/90 rounded-full p-2 text-secondary shadow-lg">
+<span class="material-symbols-outlined text-[20px] filled-icon">eco</span>
+</div>
+</div>
+<div class="relative flex-shrink-0 w-40 h-48 rounded-2xl bg-[#FFCCBC] group cursor-pointer overflow-hidden border-2 border-primary/10">
+<div class="absolute inset-0 bg-cover bg-center opacity-40" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAy980M0tupLz2FZBrKujJJq36UjTrxUCv60bxGAynq6bYbS9Z6u9_4V8RDUNafCZ7oWj707gHgv3R-RyHlfV9mAM-Wj76zLBgotQDwqcTJTsMKBTnM1akFcPPzP-7GSKri1rNuplxyTxMgOXRYgIFgKR2lIYFGXzk0PBPu1bp4mp8YBj4qrVIR1Ym7xK9azcEfvAlf-q5jJOAq1MJ7FW2L9shYFcSBeASg9S_q7vZLGp2BHBM8ACOd4tiD5uFlv0KixEOSh7000NA');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-red-900/80 to-transparent"></div>
+<div class="absolute bottom-4 left-4 pr-2">
+<h3 class="text-white text-lg font-extrabold leading-tight">Indian Street Food</h3>
+<p class="text-accent text-[10px] font-bold uppercase tracking-wider">Chaat &amp; More</p>
+</div>
+<div class="absolute top-4 right-4 bg-accent/90 rounded-full p-2 text-primary shadow-lg">
+<span class="material-symbols-outlined text-[20px] filled-icon">dinner_dining</span>
+</div>
+</div>
+</div>
+</section>
+<div class="flex items-center justify-between px-4 mt-8 mb-4">
+<h2 class="text-xl font-extrabold tracking-tight flex items-center gap-2">
+<span class="w-1.5 h-6 bg-accent rounded-full"></span>
+        Authentic Markets
+    </h2>
+<button class="text-primary text-sm font-bold flex items-center gap-1">
+        See all
+        <span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<section class="px-4">
+<div class="grid grid-cols-2 gap-x-4 gap-y-6">
+<div class="flex flex-col gap-2">
+<div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gray-200 shadow-md">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuC5nanFQriNwDXrSGe10OMgZFeh6eAyqVr-V3uZaXHpy63ZASqH9VPpXmvY-sQWoyLdeZ3JpCtxMl1xfTcpBG4j0Wnw8GjUNfL-wXCOjlZ51igk13c8ew_8q88LkByh3T_aNzjgb4nQhL0RNoZyUKNZgJCqOcUE7iLPR6c3B2D6Ipgd9Hufr3BhMgxKvboUTjHSZ-nEc3VdOeIKvQ-huUFu8zm2z58yV5JQm5X6zQ46I1ponjFeedgkA3EmMeJd1lsBg4hvDaOILRM');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute top-3 right-3 bg-white/95 px-2 py-0.5 rounded-lg flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-accent text-[14px] filled-icon">star</span>
+<span class="text-[11px] font-black text-gray-800">4.8</span>
+</div>
+<div class="absolute bottom-3 left-3 bg-secondary text-white text-[9px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">
+                    Pure Veg
+                </div>
+</div>
+<div>
+<h4 class="font-bold text-[15px] leading-tight truncate">Bharat Kirana Store</h4>
+<div class="flex items-center gap-1 mt-0.5 text-gray-500 dark:text-gray-400 text-[11px] font-medium">
+<span class="material-symbols-outlined text-[14px] text-primary">delivery_dining</span>
+<span>15-20 min • 1.2 km</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gray-200 shadow-md">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCgOJE-LK-MXUZrlcXYTmJLdLR2KqAnGm_lg7jJRhSkw4M7gb6_YmTfis2190emRLJaNZkLqvcXRdHg2Nkg8sW9FK70CcHRkXUxgwm538KtsvNuWof7o1sp4fnJNZEwPzm0N6C_dCm7QZQaxoIu_mGpZwmQ_p0PeedeZYZqk0iDwP3LkNc_0bi48AJwd5ZgEaNA8RKHMe7-afndLIuUm59YemHs4Q0YU1V82SvxCIClTF0F1OfIcQRmk13KTGZCCo6vzdie2jEv5Tk');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute top-3 right-3 bg-white/95 px-2 py-0.5 rounded-lg flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-accent text-[14px] filled-icon">star</span>
+<span class="text-[11px] font-black text-gray-800">4.9</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-[15px] leading-tight truncate">Royal Sweets &amp; Chaat</h4>
+<div class="flex items-center gap-1 mt-0.5 text-gray-500 dark:text-gray-400 text-[11px] font-medium">
+<span class="material-symbols-outlined text-[14px] text-primary">delivery_dining</span>
+<span>10-15 min • 0.8 km</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gray-200 shadow-md">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDH_uXMPE5Lr74xZfnyVKtRQfsXKWlm0oquASE29wqriloNJKku1ExQj83mGQ4PRsog59OTMfHr0oHNHSSrjXNp-H9QBL3pAFpU4AkKO2FA41suQt2kd5D5wsZsiV_YEajlB9KrgTxfRwB-wsLrSWOFOiEMadpdZMEHqK6ze9sD3SL0Ls-RClK9CntS3gukxgEZv_yt0e7baBP5bCZydTjjiJB3pV7CCsRjfhSS5mYVY0WbCH6egALt7kBRfG6MYWhHqkXKKAJ4ilQ');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute top-3 right-3 bg-white/95 px-2 py-0.5 rounded-lg flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-accent text-[14px] filled-icon">star</span>
+<span class="text-[11px] font-black text-gray-800">4.5</span>
+</div>
+</div>
+<div>
+<h4 class="font-bold text-[15px] leading-tight truncate">Organic India Mart</h4>
+<div class="flex items-center gap-1 mt-0.5 text-gray-500 dark:text-gray-400 text-[11px] font-medium">
+<span class="material-symbols-outlined text-[14px] text-primary">delivery_dining</span>
+<span>25-30 min • 2.5 km</span>
+</div>
+</div>
+</div>
+<div class="flex flex-col gap-2">
+<div class="relative aspect-[4/5] rounded-2xl overflow-hidden bg-gray-200 shadow-md">
+<div class="w-full h-full bg-cover bg-center" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCfC9FxRO1opp5JNFk-zlN9q5KBefz1zkB5bkU2kPw2eeINHL8alJPa5C_SLgmCfaGBHTsXkLv4JdYIWzf5AP8K45KnZVfWhxwFGSwTGu-4Hx0b9a74Lnh0b42RCsvQNNh8rAZKzp6pnthavQezOGkAD9_sFNgZXPwuew0gEKISZio0JkODCvkEvzRbn_NDc8_dqSKX9mZZ3bcYIMZRNpQUp9G7wiEPbmD3vxUX3LvYGUO6ITu8RoTVQ9PFsp5D-4d1_Lm9QgrfSMI');"></div>
+<div class="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>
+<div class="absolute top-3 right-3 bg-white/95 px-2 py-0.5 rounded-lg flex items-center gap-0.5 shadow-sm">
+<span class="material-symbols-outlined text-accent text-[14px] filled-icon">star</span>
+<span class="text-[11px] font-black text-gray-800">4.7</span>
+</div>
+<div class="absolute bottom-3 left-3 bg-secondary text-white text-[9px] font-bold px-2 py-1 rounded-md uppercase tracking-wide">
+                    Pure Veg
+                </div>
+</div>
+<div>
+<h4 class="font-bold text-[15px] leading-tight truncate">Ayurveda Lifestyle</h4>
+<div class="flex items-center gap-1 mt-0.5 text-gray-500 dark:text-gray-400 text-[11px] font-medium">
+<span class="material-symbols-outlined text-[14px] text-primary">delivery_dining</span>
+<span>20-25 min • 1.9 km</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<nav class="fixed bottom-0 left-0 right-0 bg-white/95 dark:bg-background-dark/95 backdrop-blur-xl border-t border-orange-100 dark:border-gray-800 px-6 py-3 pb-8 z-50">
+<div class="flex items-center justify-between max-w-md mx-auto">
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined filled-icon">home</span>
+<span class="text-[10px] font-black">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">explore</span>
+<span class="text-[10px] font-medium">Explore</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">shopping_basket</span>
+<span class="text-[10px] font-medium">Bazaar</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">favorite</span>
+<span class="text-[10px] font-medium">Saved</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</div>
+</div>
+</nav>
+
+</body></html>

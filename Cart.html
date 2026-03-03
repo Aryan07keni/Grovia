@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grovia - Your Shopping Cart</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#11d462",
+                        "saffron": "#FF9933",
+                        "background-light": "#f6f8f7",
+                        "background-dark": "#102218",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .mandala-bg {
+            background-image: radial-gradient(circle at 100% 0%, rgba(17, 212, 98, 0.05) 0%, transparent 25%),
+                              radial-gradient(circle at 0% 100%, rgba(255, 153, 51, 0.05) 0%, transparent 25%);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#111814] dark:text-white min-h-screen">
+<!-- Top Navigation Bar -->
+<div class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center p-4 justify-between">
+<div class="flex items-center gap-3">
+<div class="text-[#111814] dark:text-white cursor-pointer">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h2 class="text-lg font-bold leading-tight tracking-tight">My Cart</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-xs font-semibold px-2 py-1 bg-primary/10 text-primary rounded-full">3 ITEMS</span>
+</div>
+</div>
+</div>
+<!-- Main Scrollable Content -->
+<main class="pb-32 mandala-bg">
+<!-- Delivery Address Section -->
+<div class="bg-white dark:bg-background-dark/50 m-4 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm overflow-hidden">
+<div class="flex items-center gap-4 p-4 justify-between">
+<div class="flex items-center gap-4">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-12">
+<span class="material-symbols-outlined">location_on</span>
+</div>
+<div class="flex flex-col justify-center">
+<p class="text-[#111814] dark:text-white text-base font-bold leading-tight line-clamp-1">Delivering to Home in 25 mins</p>
+<p class="text-[#618972] dark:text-gray-400 text-sm font-normal leading-normal line-clamp-1">Sector 45, Gurgaon, Haryana</p>
+</div>
+</div>
+<div class="shrink-0">
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center rounded-lg h-8 px-4 bg-primary/10 text-primary text-sm font-bold leading-normal transition-colors hover:bg-primary/20">
+<span>Change</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Items Section -->
+<div class="px-4">
+<div class="flex items-center justify-between pb-2 pt-4">
+<h3 class="text-[#111814] dark:text-white text-lg font-bold leading-tight tracking-tight">Items in Cart</h3>
+<span class="text-xs text-gray-400 uppercase tracking-widest font-bold">Groceries</span>
+</div>
+<!-- Item 1 -->
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark/50 rounded-xl p-3 mb-3 border border-gray-50 dark:border-gray-800 shadow-sm">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 border border-gray-100 dark:border-gray-700" data-alt="Aashirvaad Whole Wheat Atta package 5kg" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCnrRj1s0meCJ4F5jRiZJ923Vg2gdWIXxrZLTp3GjJRluL6Hmz-exXHfwI77SbB88J7fTovhwHg3BEVzAX0r60FwHu-ZjgRS-r3xWcI0OfM-4uIsjfNFiT-ofys0hsf6SLqbOUOLmqcWxUS17OofLy-oUBHAJCil-KSDWRKXzIgq23Jy9s4f4qUqaBxQIiK4zt_iXk2kWNsoVZO03kAoJfqY3yY5YLQWT_tQy809nlqqyvnmRyx2BQowntecsbiDSc4hSXb5nLlJFQ");'></div>
+<div class="flex flex-col flex-1 justify-center">
+<p class="text-[#111814] dark:text-white text-base font-semibold leading-tight">Aashirvaad Whole Wheat Atta</p>
+<p class="text-[#618972] dark:text-gray-400 text-sm font-normal mb-1">5kg</p>
+<p class="text-[#111814] dark:text-white text-base font-bold">₹245</p>
+</div>
+<div class="shrink-0">
+<div class="flex items-center gap-3 text-[#111814] bg-background-light dark:bg-background-dark p-1.5 rounded-lg border border-gray-100 dark:border-gray-800">
+<button class="text-primary font-bold flex h-7 w-7 items-center justify-center rounded-md bg-white dark:bg-gray-800 shadow-sm">-</button>
+<span class="text-sm font-bold w-4 text-center dark:text-white">1</span>
+<button class="text-primary font-bold flex h-7 w-7 items-center justify-center rounded-md bg-white dark:bg-gray-800 shadow-sm">+</button>
+</div>
+</div>
+</div>
+<!-- Item 2 -->
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark/50 rounded-xl p-3 mb-3 border border-gray-50 dark:border-gray-800 shadow-sm">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 border border-gray-100 dark:border-gray-700" data-alt="Amul Butter salted 100g pack" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBwaSvzsEZc5vxWmtjxhZyd15fwX6TSTPQW1mw4xWTTJPC4CLLx3U2nhJ3j4TE4Vb1LlHPC9AHBzYxj8InzprlJkyOn8KDLvVxkc2C1XXLwMBuinE2-mYnMSyUOXxqNT3J9s6YEzn0XZfetpBFdVpxcKO8B7A8LeFHEuDFvmr4zucIfLk5wn4J9kMNAI3COj5Rqrd0K-F6OivzvZejArAdx6xvz_Pa3HUL9zqT6ds-6N9PEDn_D5ERU7ZN62dkIumHpi2H6wG4fPMU");'></div>
+<div class="flex flex-col flex-1 justify-center">
+<p class="text-[#111814] dark:text-white text-base font-semibold leading-tight">Amul Butter (Salted)</p>
+<p class="text-[#618972] dark:text-gray-400 text-sm font-normal mb-1">100g</p>
+<p class="text-[#111814] dark:text-white text-base font-bold">₹56</p>
+</div>
+<div class="shrink-0">
+<div class="flex items-center gap-3 text-[#111814] bg-background-light dark:bg-background-dark p-1.5 rounded-lg border border-gray-100 dark:border-gray-800">
+<button class="text-primary font-bold flex h-7 w-7 items-center justify-center rounded-md bg-white dark:bg-gray-800 shadow-sm">-</button>
+<span class="text-sm font-bold w-4 text-center dark:text-white">2</span>
+<button class="text-primary font-bold flex h-7 w-7 items-center justify-center rounded-md bg-white dark:bg-gray-800 shadow-sm">+</button>
+</div>
+</div>
+</div>
+<!-- Item 3 -->
+<div class="flex items-center gap-4 bg-white dark:bg-background-dark/50 rounded-xl p-3 border border-gray-50 dark:border-gray-800 shadow-sm">
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-16 border border-gray-100 dark:border-gray-700" data-alt="Fresh Organic Alphonso Mangoes crate" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAsnkmM73q6HB8PQns5A4ozcOBMn2yCAf0WrKywVYKFkd1k5OBgkh1Uy0GxwizfaRHbYk9vNEpIim-s7dvopW4D6krPDNSCbowSULAPvaUIPjhSqIYWdEGdmcuseLKmBrnA9xrak4PoESqsizdA3_j0T0MRMotFJ6CySoEh7teGmqZrMMezrXZQqCivhgjlIV-n54iMiRo-npr73R9GbCQ6zdnc9Kp0HABGRtMVRjlwC0-rJMbcvMiSQmDUBWCdwlm5iINP8cyAbqY");'></div>
+<div class="flex flex-col flex-1 justify-center">
+<p class="text-[#111814] dark:text-white text-base font-semibold leading-tight">Organic Alphonso Mangoes</p>
+<p class="text-[#618972] dark:text-gray-400 text-sm font-normal mb-1">1kg</p>
+<p class="text-[#111814] dark:text-white text-base font-bold">₹450</p>
+</div>
+<div class="shrink-0">
+<div class="flex items-center gap-3 text-[#111814] bg-background-light dark:bg-background-dark p-1.5 rounded-lg border border-gray-100 dark:border-gray-800">
+<button class="text-primary font-bold flex h-7 w-7 items-center justify-center rounded-md bg-white dark:bg-gray-800 shadow-sm">-</button>
+<span class="text-sm font-bold w-4 text-center dark:text-white">1</span>
+<button class="text-primary font-bold flex h-7 w-7 items-center justify-center rounded-md bg-white dark:bg-gray-800 shadow-sm">+</button>
+</div>
+</div>
+</div>
+</div>
+<!-- Offers Section -->
+<div class="m-4 mt-8 p-4 bg-white dark:bg-background-dark/50 rounded-xl border-2 border-dashed border-primary/30 flex items-center justify-between">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-saffron">confirmation_number</span>
+<span class="font-bold text-[#111814] dark:text-white">Apply Coupon</span>
+</div>
+<button class="bg-saffron text-white px-4 py-2 rounded-lg font-bold text-sm shadow-md hover:brightness-110 active:scale-95 transition-all">
+                View Offers
+            </button>
+</div>
+<!-- Bill Details -->
+<div class="mx-4 mt-6 p-4 bg-white dark:bg-background-dark/50 rounded-xl border border-gray-100 dark:border-gray-800 shadow-sm">
+<h4 class="text-base font-bold mb-4">Detailed Bill</h4>
+<div class="space-y-3">
+<div class="flex justify-between text-sm">
+<span class="text-gray-500 dark:text-gray-400">Item Total</span>
+<span class="font-medium text-[#111814] dark:text-white">₹751.00</span>
+</div>
+<div class="flex justify-between text-sm items-center">
+<div class="flex items-center gap-1 text-gray-500 dark:text-gray-400">
+<span>Delivery Fee</span>
+<span class="material-symbols-outlined text-[16px]">info</span>
+</div>
+<div class="flex items-center gap-2">
+<span class="text-gray-400 line-through">₹40</span>
+<span class="text-primary font-bold uppercase text-xs tracking-wider">Free</span>
+</div>
+</div>
+<div class="flex justify-between text-sm items-center">
+<div class="flex items-center gap-1 text-gray-500 dark:text-gray-400">
+<span>Govt. Taxes &amp; Fees</span>
+<span class="material-symbols-outlined text-[16px]">info</span>
+</div>
+<span class="font-medium text-[#111814] dark:text-white">₹12.50</span>
+</div>
+<div class="h-[1px] bg-gray-100 dark:bg-gray-800 my-2"></div>
+<div class="flex justify-between text-lg">
+<span class="font-bold text-[#111814] dark:text-white">Total Amount</span>
+<span class="font-bold text-primary">₹763.50</span>
+</div>
+</div>
+</div>
+<!-- Safety Badge -->
+<div class="mx-4 mt-6 mb-4 flex items-center gap-2 justify-center text-[10px] text-gray-400 font-bold uppercase tracking-widest">
+<span class="material-symbols-outlined text-sm">shield_with_heart</span>
+<span>100% Safe &amp; Secure Payments</span>
+</div>
+</main>
+<!-- Fixed Bottom Bar -->
+<div class="fixed bottom-0 left-0 right-0 bg-white dark:bg-background-dark border-t border-gray-100 dark:border-gray-800 p-4 pb-8 safe-area-bottom shadow-[0_-4px_10px_rgba(0,0,0,0.05)]">
+<div class="flex items-center gap-4">
+<div class="flex flex-col">
+<span class="text-xs text-gray-400 font-bold uppercase tracking-tighter">Total Price</span>
+<span class="text-xl font-bold text-[#111814] dark:text-white">₹763.50</span>
+</div>
+<button class="flex-1 bg-primary text-white h-14 rounded-xl font-bold text-lg flex items-center justify-center gap-2 shadow-lg shadow-primary/20 hover:brightness-105 active:scale-[0.98] transition-all">
+<span>Proceed to Pay</span>
+<span class="material-symbols-outlined">arrow_forward_ios</span>
+</button>
+</div>
+</div>
+</body></html>

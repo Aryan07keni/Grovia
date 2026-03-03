@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Explore Grovia</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f2b90d",
+                        "emerald-custom": "#065f46",
+                        "background-light": "#f8f8f5",
+                        "background-dark": "#221e10",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .indian-pattern {
+            background-image: radial-gradient(#f2b90d 0.5px, transparent 0.5px);
+            background-size: 10px 10px;
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+        }
+        .dark .glass-nav {
+            background: rgba(34, 30, 16, 0.8);
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181611] dark:text-white min-h-screen">
+<!-- Top App Bar -->
+<div class="sticky top-0 z-50 bg-white dark:bg-background-dark border-b border-gray-100 dark:border-gray-800">
+<div class="flex items-center p-4 justify-between">
+<div class="text-[#181611] dark:text-white flex size-12 shrink-0 items-center">
+<span class="material-symbols-outlined">arrow_back_ios</span>
+</div>
+<h2 class="text-[#181611] dark:text-white text-lg font-bold leading-tight tracking-[-0.015em] flex-1 text-center pr-12">Explore Grovia</h2>
+</div>
+<!-- Search Bar -->
+<div class="px-4 pb-4">
+<label class="flex flex-col min-w-40 h-12 w-full">
+<div class="flex w-full flex-1 items-stretch rounded-xl h-full shadow-sm">
+<div class="text-[#8a8060] flex border-none bg-[#f0eee8] dark:bg-gray-800 items-center justify-center pl-4 rounded-l-xl">
+<span class="material-symbols-outlined">search</span>
+</div>
+<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-r-xl text-[#181611] dark:text-white focus:outline-0 focus:ring-0 border-none bg-[#f0eee8] dark:bg-gray-800 h-full placeholder:text-[#8a8060] px-4 pl-2 text-base font-normal" placeholder="Search for atta, dal, or restaurants" value=""/>
+</div>
+</label>
+</div>
+</div>
+<!-- Main Content Area -->
+<main class="pb-24">
+<!-- Trending Searches -->
+<div class="pt-4">
+<h3 class="text-[#181611] dark:text-white text-lg font-bold px-4 pb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary scale-90">trending_up</span>
+                Trending Searches
+            </h3>
+<div class="flex gap-3 px-4 overflow-x-auto no-scrollbar pb-2">
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 px-4 shadow-sm">
+<p class="text-[#181611] dark:text-white text-sm font-medium">Biryani</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 px-4 shadow-sm">
+<p class="text-[#181611] dark:text-white text-sm font-medium">Amul Milk</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 px-4 shadow-sm">
+<p class="text-[#181611] dark:text-white text-sm font-medium">Maggi</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 px-4 shadow-sm">
+<p class="text-[#181611] dark:text-white text-sm font-medium">Mangoes</p>
+</div>
+<div class="flex h-9 shrink-0 items-center justify-center gap-x-2 rounded-full bg-white dark:bg-gray-800 border border-gray-100 dark:border-gray-700 px-4 shadow-sm">
+<p class="text-[#181611] dark:text-white text-sm font-medium">Paneer</p>
+</div>
+</div>
+</div>
+<!-- Browse Categories -->
+<div class="pt-6">
+<div class="flex justify-between items-center px-4 pb-4">
+<h3 class="text-[#181611] dark:text-white text-lg font-bold">Browse Categories</h3>
+<span class="text-emerald-custom dark:text-primary text-sm font-semibold">View All</span>
+</div>
+<!-- Grid -->
+<div class="grid grid-cols-2 gap-4 px-4">
+<!-- Category 1 -->
+<div class="relative overflow-hidden rounded-xl bg-[#e8f5e9] dark:bg-emerald-950/30 aspect-[4/5] flex flex-col group border border-emerald-100/50 dark:border-emerald-900/50">
+<div class="absolute inset-0 indian-pattern opacity-10"></div>
+<div class="p-4 z-10">
+<h4 class="font-bold text-[#1b5e20] dark:text-emerald-400 text-lg leading-tight">Fresh<br/>Vegetables</h4>
+</div>
+<div class="mt-auto p-2 flex justify-end">
+<img class="w-28 h-28 object-contain transform group-hover:scale-105 transition-transform" data-alt="Fresh vibrant green okra and tomatoes" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDNMuuEalwQfK1ne3e_OJb4hzuO7YcpMqLQ3x5ZuOEmmNLztlsch2ovX_Q2WIoR-h_rTW8CH00IYI1Jx2RT1ZMRD1HxJ0QlGrUqYyy0nkRRKDuIDW4HZeVIfFOH3mtxdTHOXsf4OuclE9uB1saEu-W_AufmhscwL6o7fWoldnSlk7-L_Ls2R4oKpn9GtDH-3y_2kv0ERVymsP5jzyVrU0Nek0Ui8RFG4D-BQGo9lriajR2_x-bBpRprX-vlzzGHCRnTjV8Qn6Ojty8"/>
+</div>
+</div>
+<!-- Category 2 -->
+<div class="relative overflow-hidden rounded-xl bg-[#fff8e1] dark:bg-primary/10 aspect-[4/5] flex flex-col group border border-primary/20">
+<div class="absolute inset-0 indian-pattern opacity-10"></div>
+<div class="p-4 z-10">
+<h4 class="font-bold text-[#795548] dark:text-primary text-lg leading-tight">Indian<br/>Masalas</h4>
+</div>
+<div class="mt-auto p-2 flex justify-end">
+<img class="w-28 h-28 object-contain transform group-hover:scale-105 transition-transform" data-alt="Assorted colorful Indian spice powders in bowls" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDk1yc7IJPPTk8_CLdPqix8gWSeIcClXlwRMsE4i00jrrKBZcG0EIihe-MWzGB00J117acPrT53SalFuf5TA74VMtM7eilNRzBs98UNeZYqvN6iOiyKCJSs8u5OPNihnEEiDcVDM9llR5m9y_i4zNtP2uFfUj3aUO2aDJ-q4cCaiREg05KczG3rffMICQ5zSppT7itkRCLz_dZ6JOJb7TAEG5Cpq2K1QXAhDckxZ2FBFlJUYBMqrXVMkVH1EDOuqcptDUheUbhEOVs"/>
+</div>
+</div>
+<!-- Category 3 -->
+<div class="relative overflow-hidden rounded-xl bg-[#fbe9e7] dark:bg-orange-950/30 aspect-[4/5] flex flex-col group border border-orange-100/50">
+<div class="absolute inset-0 indian-pattern opacity-10"></div>
+<div class="p-4 z-10">
+<h4 class="font-bold text-[#bf360c] dark:text-orange-400 text-lg leading-tight">Street<br/>Food</h4>
+</div>
+<div class="mt-auto p-2 flex justify-end">
+<img class="w-28 h-28 object-contain transform group-hover:scale-105 transition-transform" data-alt="Crispy golden samosas and street snacks" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDvGHdn5GW32FmhfvJNUt0uTSdIbSIbW1-JFsdYBskKmOgpDoC7kw4e5HU6jQvgzrIoUNsp2ZyfWpPE-86srN5BWRcttw-vjqqO8v_1glZKtjRG1Ad2cT89b-fzSvE9i3L3MoJMjhk8V8sqgsXUAp6CPdEU73AO-mpc132dLfjZ0yZ9VdKWszY2jCpuRWpdqz3m7IQZ7iarJhw-x-KkMS87Nn8NqftJ9bZi6Y3etJpp7tIYDnUNbNzrh3YmuEURwVWrHDLqn_ucm94"/>
+</div>
+</div>
+<!-- Category 4 -->
+<div class="relative overflow-hidden rounded-xl bg-[#f3e5f5] dark:bg-purple-950/30 aspect-[4/5] flex flex-col group border border-purple-100/50">
+<div class="absolute inset-0 indian-pattern opacity-10"></div>
+<div class="p-4 z-10">
+<h4 class="font-bold text-[#4a148c] dark:text-purple-400 text-lg leading-tight">Sweets &amp;<br/>Snacks</h4>
+</div>
+<div class="mt-auto p-2 flex justify-end">
+<img class="w-28 h-28 object-contain transform group-hover:scale-105 transition-transform" data-alt="Delicious Indian milk sweets and namkeen" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA9mlaHtEdRtk9RcDzM_4tiiTfPIFRuPYbC-O8oaO_25dkWLue734YWSMbtdApGRXP7UN65298pbLRh09JGdC9lU0O9YGFeZUU7Kly6f4WGOXLU_NUApZmf00Kuov-4BxK3CqW9gIjpna_SaaARloZ5Fg_sCoQ22TimY4f3egFHxcw6kQXiUo0Mqfg-XtopTiboGXvsPooQH_6EImhxveI6huajm41EOE1VfSU8o3bdr4FX3pVcyI2lS376HcA1o7519DXmWqIeovw"/>
+</div>
+</div>
+<!-- Category 5 (Full Width) -->
+<div class="col-span-2 relative overflow-hidden rounded-xl bg-[#e3f2fd] dark:bg-blue-950/30 h-32 flex items-center group border border-blue-100/50">
+<div class="absolute inset-0 indian-pattern opacity-10"></div>
+<div class="p-6 z-10">
+<h4 class="font-bold text-[#0d47a1] dark:text-blue-400 text-xl leading-tight">Dairy &amp; Eggs</h4>
+<p class="text-[#0d47a1]/70 dark:text-blue-400/70 text-sm mt-1">Farm fresh delivery</p>
+</div>
+<div class="ml-auto p-2">
+<img class="w-40 h-28 object-contain transform group-hover:scale-105 transition-transform" data-alt="Milk bottles and fresh farm eggs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAVNqRdbN5D3MGAP5eSf8Dq1ly_KmZ-OZHcmPnbWlX0esCttUCJe73MQg_6dptt2XPThhzRi_A4EWoJz4vOK6OO6AoLZPKzVMwy-veumIVNS6VBRYa5yFfWawUtnpnQRWNpcq63KEI86Nsry6NHQrlRxxwW3xc1I1AabxxBoBwBUrygfh2o-OAzrTKHkX4UcOksiyDDDPlQUWXh8tsIOndhBCuf--XcObK6uB2uWeTwjsJWElDSSn2dGS_nlaVDkniYMospdnr6t0U"/>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Bar -->
+<nav class="fixed bottom-0 left-0 right-0 glass-nav border-t border-gray-100 dark:border-gray-800 px-6 py-3 flex justify-between items-center z-50">
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-primary">
+<span class="material-symbols-outlined fill-1" style="font-variation-settings: 'FILL' 1">search</span>
+<span class="text-[10px] font-bold">Search</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">receipt_long</span>
+<span class="text-[10px] font-medium">Orders</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400 relative">
+<span class="material-symbols-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-primary text-[#181611] text-[9px] font-bold h-4 w-4 rounded-full flex items-center justify-center border-2 border-white dark:border-background-dark">2</span>
+<span class="text-[10px] font-medium">Cart</span>
+</div>
+<div class="flex flex-col items-center gap-1 text-gray-400">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</div>
+</nav>
+<style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        .fill-1 {
+            font-variation-settings: 'FILL' 1;
+        }
+    </style>
+</body></html>

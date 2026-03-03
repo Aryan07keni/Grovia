@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Grovia - Product Details</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#ec6d13",
+                        "background-light": "#f8f7f6",
+                        "background-dark": "#221810",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {"DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .indian-motif {
+            background-image: radial-gradient(#ec6d13 0.5px, transparent 0.5px);
+            background-size: 16px 16px;
+            opacity: 0.05;
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-[#181411] dark:text-[#f8f7f6] antialiased">
+<div class="relative flex min-h-screen w-full flex-col max-w-md mx-auto bg-white dark:bg-background-dark shadow-xl overflow-x-hidden">
+<!-- TopAppBar -->
+<div class="fixed top-0 left-0 right-0 z-50 flex items-center bg-white/80 dark:bg-background-dark/80 backdrop-blur-md p-4 justify-between max-w-md mx-auto">
+<div class="text-[#181411] dark:text-white flex size-12 shrink-0 items-center justify-center cursor-pointer rounded-full bg-background-light dark:bg-white/10">
+<span class="material-symbols-outlined">arrow_back_ios_new</span>
+</div>
+<div class="flex w-12 items-center justify-end">
+<button class="flex size-12 cursor-pointer items-center justify-center overflow-hidden rounded-full bg-background-light dark:bg-white/10 text-[#181411] dark:text-white">
+<span class="material-symbols-outlined">share</span>
+</button>
+</div>
+</div>
+<!-- Content Area -->
+<div class="flex-1 pb-32">
+<!-- HeaderImage -->
+<div class="@container pt-16">
+<div class="@[480px]:px-4 @[480px]:py-3">
+<div class="w-full bg-[#f4f2f0] dark:bg-white/5 bg-center bg-no-repeat bg-contain flex flex-col justify-end overflow-hidden @[480px]:rounded-xl min-h-96" data-alt="Aashirvaad Whole Wheat Atta package on a clean background" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBGbRBZmgnImq7F2LP6l7NlUPQzhOjbXcXDBTwUWhUC0WD2wVKxu23jcXDmCx3lHeMniOdS-LQtuPs5G67ccp6PZrMOyhO6mcTIhl5w592wTk4Jg6vAUmQ32lVlrSqJd_uirDwHv9s5v-HiEHUNWZQD3bQvTtHLnMdtogkNDaI9FM0nD6kegVyF3uM-Xq_mnR9NngynF-0nZXLI6DGlfRYiBsROmG5QpYR7-MNcxfoLFDw40o0ohvpQUaz_PSCQzYUiQIfJCB2MnLM");'>
+</div>
+</div>
+</div>
+<!-- HeadlineText -->
+<div class="relative">
+<div class="absolute inset-0 indian-motif pointer-events-none"></div>
+<div class="px-4 pt-6 pb-2">
+<div class="flex justify-between items-start gap-2">
+<h2 class="text-[#181411] dark:text-white tracking-tight text-[28px] font-bold leading-tight flex-1">
+                            Aashirvaad Whole Wheat Atta - Superior MP Mall
+                        </h2>
+<div class="flex items-center gap-1 bg-green-50 dark:bg-green-900/20 px-2 py-1 rounded-md border border-green-200 dark:border-green-800">
+<div class="w-3 h-3 bg-green-600 rounded-full border-2 border-white dark:border-green-900"></div>
+<span class="text-green-700 dark:text-green-400 text-xs font-bold uppercase tracking-wider">Veg</span>
+</div>
+</div>
+</div>
+<!-- ListItem (Brand) -->
+<div class="flex items-center gap-4 px-4 min-h-12 justify-between">
+<div class="flex items-center gap-3">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-8" data-icon="Leaf">
+<span class="material-symbols-outlined">eco</span>
+</div>
+<p class="text-[#181411] dark:text-[#f8f7f6]/80 text-base font-medium leading-normal flex-1">Brand: Aashirvaad</p>
+</div>
+</div>
+</div>
+<!-- SectionHeader: Select Pack Size -->
+<div class="px-4 pb-4 pt-6">
+<h3 class="text-[#181411] dark:text-white text-lg font-bold leading-tight tracking-tight">Select Pack Size</h3>
+</div>
+<!-- Pack Size Selector (Custom Implementation) -->
+<div class="flex flex-col gap-3 px-4 mb-6">
+<!-- 1kg Chip -->
+<div class="flex items-center justify-between p-4 rounded-xl border-2 border-transparent bg-background-light dark:bg-white/5 cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-base font-semibold">1 kg</span>
+<span class="text-sm text-gray-500">₹60</span>
+</div>
+<span class="material-symbols-outlined text-gray-400">radio_button_unchecked</span>
+</div>
+<!-- 5kg Chip (Selected/Active) -->
+<div class="flex items-center justify-between p-4 rounded-xl border-2 border-primary bg-primary/5 cursor-pointer relative">
+<div class="flex items-center gap-3">
+<span class="text-base font-semibold">5 kg</span>
+<span class="text-sm text-primary font-bold">₹285</span>
+<span class="bg-primary text-white text-[10px] font-bold px-2 py-0.5 rounded-full uppercase">Best Value</span>
+</div>
+<span class="material-symbols-outlined text-primary">check_circle</span>
+</div>
+<!-- 10kg Chip -->
+<div class="flex items-center justify-between p-4 rounded-xl border-2 border-transparent bg-background-light dark:bg-white/5 cursor-pointer">
+<div class="flex items-center gap-3">
+<span class="text-base font-semibold">10 kg</span>
+<span class="text-sm text-gray-500">₹540</span>
+</div>
+<span class="material-symbols-outlined text-gray-400">radio_button_unchecked</span>
+</div>
+</div>
+<!-- Product Details Section -->
+<div class="px-4 py-4 space-y-6">
+<div>
+<h3 class="text-[#181411] dark:text-white text-base font-bold mb-2">Product Description</h3>
+<p class="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
+                        Aashirvaad Whole Wheat Atta is made from the finest grains - heavy on the palm, golden in colour and hard in bite. It is ground using modern chakki process which ensures that the atta contains 0% Maida and 100% Sampoorna Atta.
+                    </p>
+</div>
+<div class="bg-background-light dark:bg-white/5 p-4 rounded-xl">
+<h3 class="text-[#181411] dark:text-white text-base font-bold mb-3 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary">nutrition</span> Nutritional Facts
+                    </h3>
+<div class="grid grid-cols-2 gap-4">
+<div>
+<p class="text-xs text-gray-500 uppercase font-bold">Energy</p>
+<p class="text-sm font-semibold">367 kcal</p>
+</div>
+<div>
+<p class="text-xs text-gray-500 uppercase font-bold">Protein</p>
+<p class="text-sm font-semibold">10.1 g</p>
+</div>
+<div>
+<p class="text-xs text-gray-500 uppercase font-bold">Carbohydrates</p>
+<p class="text-sm font-semibold">74.1 g</p>
+</div>
+<div>
+<p class="text-xs text-gray-500 uppercase font-bold">Dietary Fibre</p>
+<p class="text-sm font-semibold">10.5 g</p>
+</div>
+</div>
+</div>
+<div class="flex items-center gap-4 bg-white dark:bg-transparent border border-gray-100 dark:border-white/10 p-4 rounded-xl">
+<div class="text-primary flex items-center justify-center rounded-lg bg-primary/10 shrink-0 size-10">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<div class="flex-1">
+<p class="text-[#181411] dark:text-white text-sm font-bold">Shelf Life</p>
+<p class="text-gray-500 text-xs">3 Months from date of packaging</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Sticky Bottom Bar -->
+<div class="fixed bottom-0 left-0 right-0 max-w-md mx-auto bg-white dark:bg-background-dark border-t border-gray-100 dark:border-white/10 p-4 pb-8 z-50">
+<div class="flex items-center justify-between gap-6">
+<div class="flex flex-col">
+<span class="text-xs text-gray-500 font-medium">Total Price</span>
+<div class="flex items-center gap-2">
+<span class="text-2xl font-bold text-[#181411] dark:text-white">₹285</span>
+<span class="text-sm text-gray-400 line-through">₹310</span>
+</div>
+</div>
+<button class="flex-1 bg-primary text-white h-14 rounded-full font-bold text-lg flex items-center justify-center gap-2 shadow-lg shadow-primary/30">
+<span class="material-symbols-outlined">shopping_basket</span>
+                    Add to Cart
+                </button>
+</div>
+</div>
+</div>
+</body></html>
