@@ -1,0 +1,214 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Grovia – Fresh Groceries</title>
+
+<script src="https://cdn.tailwindcss.com"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet">
+
+<script>
+tailwind.config = {
+theme:{
+extend:{
+colors:{
+leaf:"#22c55e",
+avocado:"#16a34a",
+fruit:"#fb923c",
+cream:"#fffdf6",
+market:"#fef3c7"
+},
+fontFamily:{
+display:["Plus Jakarta Sans","sans-serif"]
+}
+}
+}
+}
+</script>
+
+<style>
+
+body{
+font-family:"Plus Jakarta Sans",sans-serif;
+background:linear-gradient(180deg,#fffdf6,#f0fdf4);
+overflow-x:hidden;
+}
+
+/* logo grow animation */
+
+@keyframes growLeaf{
+0%{transform:scale(.6) rotate(-10deg);opacity:.5}
+50%{transform:scale(1.15) rotate(5deg)}
+100%{transform:scale(1)}
+}
+
+.logo-animate{
+animation:growLeaf 2s ease forwards;
+}
+
+/* floating produce */
+
+@keyframes float{
+0%{transform:translateY(0)}
+50%{transform:translateY(-12px)}
+100%{transform:translateY(0)}
+}
+
+.float{
+animation:float 6s ease-in-out infinite;
+}
+
+/* glowing grocery button */
+
+.grocery-btn{
+background:linear-gradient(135deg,#22c55e,#16a34a);
+transition:.35s;
+}
+
+.grocery-btn:hover{
+transform:translateY(-3px) scale(1.02);
+box-shadow:0 15px 35px rgba(34,197,94,.35);
+}
+
+/* google button hover */
+
+.google-btn:hover{
+background:#fff7ed;
+transform:scale(1.02);
+}
+
+/* card hover */
+
+.card{
+transition:.35s;
+}
+
+.card:hover{
+transform:translateY(-6px);
+box-shadow:0 25px 50px rgba(0,0,0,.12);
+}
+
+/* produce bubbles */
+
+.bubble{
+position:absolute;
+border-radius:50%;
+filter:blur(70px);
+opacity:.35;
+z-index:-1;
+}
+
+</style>
+
+</head>
+
+<body class="min-h-screen flex flex-col items-center justify-center px-6">
+
+<div class="bubble bg-green-300 w-72 h-72 top-10 left-10"></div>
+<div class="bubble bg-orange-300 w-72 h-72 bottom-10 right-10"></div>
+
+<!-- LOGO -->
+
+<div class="flex items-center gap-2 mb-8">
+
+<span class="material-symbols-outlined text-5xl text-leaf logo-animate">
+eco
+</span>
+
+<h1 class="text-3xl font-bold text-gray-800">
+Grovia
+</h1>
+
+</div>
+
+<p class="text-gray-500 mb-10 text-center max-w-sm">
+Farm-fresh vegetables, fruits and daily essentials delivered straight from local markets.
+</p>
+
+<!-- CARD -->
+
+<div class="card bg-white rounded-3xl p-8 w-full max-w-md">
+
+<img
+class="rounded-2xl mb-6 float"
+src="https://images.unsplash.com/photo-1542838132-92c53300491e">
+
+<h2 class="text-2xl font-bold text-gray-800 text-center">
+Welcome Back 🥬
+</h2>
+
+<p class="text-gray-500 text-center mt-2 mb-6">
+Sign in to explore fresh groceries and organic products.
+</p>
+
+<!-- PHONE LOGIN -->
+
+<button class="grocery-btn text-white font-semibold w-full h-14 rounded-xl flex items-center justify-center gap-2 mb-4">
+
+<span class="material-symbols-outlined">phone_android</span>
+
+Continue with Phone
+
+</button>
+
+<!-- DIVIDER -->
+
+<div class="flex items-center my-4">
+
+<div class="flex-1 h-px bg-gray-200"></div>
+
+<span class="px-3 text-xs text-gray-400 uppercase">
+or
+</span>
+
+<div class="flex-1 h-px bg-gray-200"></div>
+
+</div>
+
+<!-- GOOGLE LOGIN -->
+
+<button class="google-btn w-full h-14 rounded-xl border border-gray-200 bg-white flex items-center justify-center gap-3 font-semibold transition">
+
+<img class="w-5"
+src="https://upload.wikimedia.org/wikipedia/commons/0/09/IOS_Google_icon.png">
+
+Continue with Google
+
+</button>
+
+</div>
+
+<!-- FOOTER -->
+
+<div class="text-center mt-6 text-sm text-gray-500">
+
+By continuing you agree to our  
+<a class="text-fruit font-semibold hover:underline">Terms</a>  
+and  
+<a class="text-fruit font-semibold hover:underline">Privacy Policy</a>
+
+<div class="mt-4">
+
+<span>New to Grovia?</span>
+
+<button class="ml-1 font-semibold text-avocado hover:text-fruit transition">
+Join Grovia →
+</button>
+
+</div>
+
+</div>
+
+</body>
+</html>
+```
+
+```
