@@ -4,25 +4,29 @@ import httpx
 
 logger = logging.getLogger(__name__)
 
-FAST2SMS_API_KEY = os.environ.get('FAST2SMS_API_KEY', '')
-TWO_FACTOR_API_KEY = os.environ.get('TWO_FACTOR_API_KEY', '')
+def get_fast2sms_key() -> str:
+    return os.environ.get('FAST2SMS_API_KEY', '').strip() or "FqmdCO8M40abPsH7wB9ZKy5XoDLxetNVGSjAgkrERTf63cJui2zUfHg6y8cK1LoIuAe035Wml9pqharv"
+
+def get_2factor_key() -> str:
+    return os.environ.get('TWO_FACTOR_API_KEY', '').strip()
 
 async def send_otp_sms(phone: str, otp: str) -> bool:
     """
     Sends a 6-digit OTP SMS to an Indian phone number (+91) via Fast2SMS or 2Factor.
-    Falls back to logger output if no SMS API keys are configured.
     """
-    # Clean phone number (extract 10-digit number)
     clean_phone = phone.replace('+91', '').replace(' ', '').strip()
     if len(clean_phone) > 10:
         clean_phone = clean_phone[-10:]
 
+    fast2sms_key = get_fast2sms_key()
+    twofactor_key = get_2factor_key()
+
     # 1. Try Fast2SMS API if key is present
-    if FAST2SMS_API_KEY:
+    if fast2sms_key:
         try:
             url = "https://www.fast2sms.com/dev/bulkV2"
             headers = {
-                "authorization": FAST2SMS_API_KEY,
+                "authorization": fast2sms_key,
                 "Content-Type": "application/json"
             }
             payload = {
@@ -35,16 +39,18 @@ async def send_otp_sms(phone: str, otp: str) -> bool:
                 data = response.json()
                 if response.status_code == 200 and data.get("return"):
                     logger.info(f"Fast2SMS OTP sent successfully to {clean_phone}")
+                    print(f"\n✅ [Fast2SMS REAL SMS SENT] OTP {otp} delivered to +91 {clean_phone}\n")
                     return True
                 else:
                     logger.error(f"Fast2SMS error: {data}")
+                    print(f"\n⚠️ Fast2SMS response error: {data}\n")
         except Exception as e:
             logger.error(f"Failed to send SMS via Fast2SMS: {e}")
 
     # 2. Try 2Factor API if key is present
-    if TWO_FACTOR_API_KEY:
+    if twofactor_key:
         try:
-            url = f"https://2factor.in/API/V1/{TWO_FACTOR_API_KEY}/SMS/{clean_phone}/{otp}"
+            url = f"https://2factor.in/API/V1/{twofactor_key}/SMS/{clean_phone}/{otp}"
             async with httpx.AsyncClient(timeout=10.0) as client:
                 response = await client.get(url)
                 data = response.json()
