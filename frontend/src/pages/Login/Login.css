@@ -73,6 +73,12 @@
   gap: 16px;
 }
 
+#recaptcha-container {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
 .input-group {
   display: flex;
   align-items: center;

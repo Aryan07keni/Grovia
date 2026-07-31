@@ -50,8 +50,10 @@ function Login() {
     if (!window.recaptchaVerifier) {
       try {
         window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
-          size: 'invisible',
-          callback: () => {}
+          size: 'normal',
+          callback: (response) => {
+            console.log('reCAPTCHA verified for dynamic SMS:', response);
+          }
         });
       } catch (err) {
         console.warn('Recaptcha init warning:', err);
