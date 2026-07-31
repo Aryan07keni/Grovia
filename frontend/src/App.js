@@ -12,6 +12,7 @@ import Category from './pages/Category/Category';
 import ProductDetail from './pages/ProductDetail/ProductDetail';
 import StoreSelection from './pages/StoreSelection/StoreSelection';
 import CartBar from './components/CartBar/CartBar';
+import ErrorBoundary from './components/ErrorBoundary';
 import './App.css';
 
 const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID || '52752986857-qbja4qfmto0ppscgjoloutejfiggeb7l.apps.googleusercontent.com';
@@ -44,11 +45,13 @@ function AppContent() {
 
 function App() {
   return (
-    <AppProvider>
-      <BrowserRouter>
-        <AppContent />
-      </BrowserRouter>
-    </AppProvider>
+    <ErrorBoundary>
+      <AppProvider>
+        <BrowserRouter>
+          <AppContent />
+        </BrowserRouter>
+      </AppProvider>
+    </ErrorBoundary>
   );
 }
 
