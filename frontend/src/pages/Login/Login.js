@@ -18,6 +18,16 @@ function Login() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
+  const [timer, setTimer] = useState(30);
+
+  useEffect(() => {
+    let interval;
+    if (otpSent && timer > 0) {
+      interval = setInterval(() => setTimer(t => t - 1), 1000);
+    }
+    return () => clearInterval(interval);
+  }, [otpSent, timer]);
+
   if (user) { navigate('/'); return null; }
 
   const handleGoogleSuccess = async (credentialResponse) => {
@@ -40,6 +50,8 @@ function Login() {
     try {
       await axios.post(`${API}/auth/phone`, { phone: `+91${phone}` });
       setOtpSent(true);
+      setTimer(30);
+      setOtp('');
     } catch (e) {
       setError('Failed to send OTP');
     }
@@ -47,7 +59,7 @@ function Login() {
   };
 
   const handleVerifyOtp = async () => {
-    if (otp.length < 4) { setError('Enter a valid OTP'); return; }
+    if (otp.length < 4) { setError('Enter the 6-digit OTP sent to your phone'); return; }
     setLoading(true);
     setError('');
     try {
@@ -55,7 +67,7 @@ function Login() {
       login(res.data);
       navigate('/');
     } catch (e) {
-      setError('Invalid OTP. Try 1234 for demo.');
+      setError(e.response?.data?.detail || 'Invalid or expired OTP');
     }
     setLoading(false);
   };
@@ -96,17 +108,23 @@ function Login() {
               <>
                 <div className="otp-info">
                   <ShieldCheck size={20} className="otp-icon" />
-                  <span>OTP sent to +91 {phone}</span>
+                  <span>6-digit OTP sent via SMS to +91 {phone}</span>
                 </div>
                 <div className="otp-inputs" data-testid="otp-inputs">
-                  {[0, 1, 2, 3].map((i) => (
+                  {[0, 1, 2, 3, 4, 5].map((i) => (
                     <input key={i} type="text" maxLength={1} className="otp-digit"
                       value={otp[i] || ''}
+                      onKeyDown={(e) => {
+                        if (e.key === 'Backspace' && !otp[i] && e.target.previousSibling) {
+                          e.target.previousSibling.focus();
+                        }
+                      }}
                       onChange={(e) => {
                         const val = e.target.value.replace(/\D/g, '');
-                        const newOtp = otp.split('');
-                        newOtp[i] = val;
-                        setOtp(newOtp.join(''));
+                        const newOtpArr = otp.split('');
+                        newOtpArr[i] = val;
+                        const newOtp = newOtpArr.join('');
+                        setOtp(newOtp);
                         if (val && e.target.nextSibling) e.target.nextSibling.focus();
                       }}
                       data-testid={`otp-digit-${i}`} />
@@ -115,7 +133,14 @@ function Login() {
                 <button className="login-btn btn-primary" onClick={handleVerifyOtp} disabled={loading} data-testid="verify-otp-btn">
                   {loading ? 'Verifying...' : 'Verify & Login'}
                 </button>
-                <button className="login-resend" onClick={() => setOtpSent(false)}>Change number</button>
+                <div className="otp-footer-actions">
+                  {timer > 0 ? (
+                    <span className="otp-timer">Resend OTP in {timer}s</span>
+                  ) : (
+                    <button className="login-resend" onClick={handleSendOtp}>Resend OTP</button>
+                  )}
+                  <button className="login-resend" onClick={() => setOtpSent(false)}>Change number</button>
+                </div>
               </>
             )}
 

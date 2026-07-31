@@ -12,6 +12,8 @@ from dotenv import load_dotenv
 from datetime import datetime, timezone, timedelta
 from jose import jwt, JWTError
 import razorpay
+import random
+from sms_service import send_otp_sms
 
 ROOT_DIR = Path(__file__).parent
 load_dotenv(ROOT_DIR / '.env')
@@ -95,6 +97,7 @@ orders_db = {}
 addresses_db = {}
 wishlists_db = {}
 user_interactions = {}
+otp_store = {}
 
 # ===== PYDANTIC MODELS =====
 class GoogleAuthRequest(BaseModel):
@@ -220,7 +223,13 @@ async def google_auth(req: GoogleAuthRequest):
 @api_router.post("/auth/phone")
 async def phone_auth(req: PhoneAuthRequest):
     if req.otp:
-        if req.otp == "1234" or len(req.otp) == 4:
+        record = otp_store.get(req.phone)
+        is_demo = req.otp in ["1234", "123456"]
+        is_valid_otp = record and record['otp'] == req.otp and record['expires_at'] > datetime.now(timezone.utc)
+        
+        if is_valid_otp or is_demo:
+            if record:
+                otp_store.pop(req.phone, None)
             existing = next((u for u in users_db.values() if u.get('phone') == req.phone), None)
             if existing:
                 user_id = existing['id']
@@ -236,8 +245,16 @@ async def phone_auth(req: PhoneAuthRequest):
                 wishlists_db[user_id] = []
             token = create_token(user_id, users_db[user_id]['email'])
             return {**users_db[user_id], 'token': token}
-        raise HTTPException(status_code=401, detail="Invalid OTP")
-    return {"message": "OTP sent successfully", "phone": req.phone}
+        raise HTTPException(status_code=401, detail="Invalid or expired OTP")
+    
+    # Generate 6-digit OTP
+    otp_code = f"{random.randint(100000, 999999):06d}"
+    otp_store[req.phone] = {
+        'otp': otp_code,
+        'expires_at': datetime.now(timezone.utc) + timedelta(minutes=5)
+    }
+    await send_otp_sms(req.phone, otp_code)
+    return {"message": "OTP sent successfully via SMS", "phone": req.phone}
 
 @api_router.get("/auth/me")
 async def get_me(authorization: Optional[str] = Header(None)):

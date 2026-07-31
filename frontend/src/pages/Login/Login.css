@@ -139,19 +139,19 @@
 
 .otp-inputs {
   display: flex;
-  gap: 12px;
+  gap: 8px;
   justify-content: center;
 }
 
 .otp-digit {
-  width: 56px;
-  height: 56px;
+  width: 46px;
+  height: 52px;
   text-align: center;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 700;
   font-family: 'Outfit', sans-serif;
   border: 2px solid var(--border);
-  border-radius: 14px;
+  border-radius: 12px;
   background: rgba(244, 247, 245, 0.8);
   outline: none;
   transition: all 0.2s ease;
@@ -162,6 +162,19 @@
   border-color: var(--primary);
   box-shadow: 0 0 0 4px var(--primary-light);
   background: white;
+}
+
+.otp-footer-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 4px;
+}
+
+.otp-timer {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
 }
 
 .login-resend {
