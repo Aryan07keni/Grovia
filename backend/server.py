@@ -224,10 +224,9 @@ async def google_auth(req: GoogleAuthRequest):
 async def phone_auth(req: PhoneAuthRequest):
     if req.otp:
         record = otp_store.get(req.phone)
-        is_demo = req.otp in ["1234", "123456"]
         is_valid_otp = record and record['otp'] == req.otp and record['expires_at'] > datetime.now(timezone.utc)
         
-        if is_valid_otp or is_demo:
+        if is_valid_otp:
             if record:
                 otp_store.pop(req.phone, None)
             existing = next((u for u in users_db.values() if u.get('phone') == req.phone), None)
