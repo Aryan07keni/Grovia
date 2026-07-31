@@ -1,20 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
-import { auth } from '../../firebase';
-import { RecaptchaVerifier, signInWithPhoneNumber } from 'firebase/auth';
-
-const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID || '52752986857-qbja4qfmto0ppscgjoloutejfiggeb7l.apps.googleusercontent.com';
 import { useApp } from '../../context/AppContext';
 import { Phone, ArrowRight, ShieldCheck } from 'lucide-react';
 import FloatingGroceries from '../../components/FloatingGroceries/FloatingGroceries';
 import axios from 'axios';
 import './Login.css';
 
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID || '52752986857-qbja4qfmto0ppscgjoloutejfiggeb7l.apps.googleusercontent.com';
 
 function Login() {
-  const { login, user } = useApp();
+  const { login, user, API } = useApp();
   const navigate = useNavigate();
   const [phone, setPhone] = useState('');
   const [otp, setOtp] = useState('');
@@ -30,22 +26,6 @@ function Login() {
     }
     return () => clearInterval(interval);
   }, [otpSent, timer]);
-
-  useEffect(() => {
-    if (!otpSent && !window.recaptchaVerifier) {
-      try {
-        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
-          size: 'normal',
-          callback: () => {
-            console.log('reCAPTCHA solved');
-          }
-        });
-        window.recaptchaVerifier.render();
-      } catch (err) {
-        console.warn('Recaptcha render warning:', err);
-      }
-    }
-  }, [otpSent]);
 
   if (user) { navigate('/'); return null; }
 
@@ -68,23 +48,12 @@ function Login() {
     setError('');
     
     try {
-      if (!window.recaptchaVerifier) {
-        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
-          size: 'normal'
-        });
-      }
-      const confirmationResult = await signInWithPhoneNumber(auth, `+91${phone}`, window.recaptchaVerifier);
-      window.confirmationResult = confirmationResult;
+      await axios.post(`${API}/auth/phone`, { phone: `+91${phone}` });
       setOtpSent(true);
       setTimer(30);
       setOtp('');
-    } catch (fbErr) {
-      console.error('Firebase SMS error:', fbErr);
-      setError(fbErr.message || fbErr.code || 'Failed to send SMS OTP');
-      if (window.recaptchaVerifier && window.recaptchaVerifier.clear) {
-        window.recaptchaVerifier.clear();
-        window.recaptchaVerifier = null;
-      }
+    } catch (e) {
+      setError(e.response?.data?.detail || 'Failed to send SMS OTP');
     }
     setLoading(false);
   };
@@ -93,21 +62,6 @@ function Login() {
     if (otp.length < 4) { setError('Enter the 6-digit OTP sent to your phone'); return; }
     setLoading(true);
     setError('');
-
-    if (window.confirmationResult && otp.length === 6) {
-      try {
-        await window.confirmationResult.confirm(otp);
-        const res = await axios.post(`${API}/auth/phone`, { phone: `+91${phone}`, otp: '123456' });
-        login(res.data);
-        window.location.href = '/';
-        return;
-      } catch (fbVerifyErr) {
-        console.warn('Firebase verify error:', fbVerifyErr);
-        setError(fbVerifyErr.message || 'Incorrect OTP code');
-        setLoading(false);
-        return;
-      }
-    }
 
     try {
       const res = await axios.post(`${API}/auth/phone`, { phone: `+91${phone}`, otp });
@@ -128,7 +82,6 @@ function Login() {
       <FloatingGroceries />
       <div className="login-container">
         <div className="login-card glass-card" data-testid="login-card">
-          <div id="recaptcha-container"></div>
           <div className="login-header">
             <h1 className="login-logo">Grovia</h1>
             <p className="login-subtitle">Fresh groceries, delivered fast</p>
