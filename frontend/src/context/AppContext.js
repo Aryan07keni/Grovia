@@ -2,7 +2,7 @@ import React, { createContext, useContext, useState, useEffect, useCallback } fr
 import axios from 'axios';
 
 const AppContext = createContext();
-const rawBackend = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000';
+const rawBackend = process.env.REACT_APP_BACKEND_URL || 'https://grovia-yyxm.onrender.com';
 const BACKEND = rawBackend.endsWith('/api') ? rawBackend.slice(0, -4) : rawBackend;
 const API = `${BACKEND.replace(/\/$/, '')}/api`;
 
