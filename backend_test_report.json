@@ -1,0 +1,168 @@
+{
+  "total_tests": 32,
+  "passed_tests": 32,
+  "failed_tests": 0,
+  "success_rate": 100.0,
+  "results": [
+    {
+      "test": "Health Check",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Categories",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Categories Count (13)",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get All Products",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Products Count (105)",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get Product Detail",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Product Store Availability",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Search Products (apple)",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Product Search Works",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get All Stores",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Stores Count (8)",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get Nearby Stores",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Nearby Stores with Distance",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get Recommendations (No Auth)",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Send OTP",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "OTP Send Message",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Verify OTP",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "OTP Verification Returns Token",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Get Current User",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Cart",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Add to Cart",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Cart Add Item Success",
+      "success": true,
+      "details": ""
+    },
+    {
+      "test": "Update Cart Item",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Remove Cart Item",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Add to Cart for Order",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Add Address",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Create Order",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Order Details",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get All Orders",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Profile",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Addresses",
+      "success": true,
+      "details": "Status: 200"
+    },
+    {
+      "test": "Get Wishlist",
+      "success": true,
+      "details": "Status: 200"
+    }
+  ]
+}

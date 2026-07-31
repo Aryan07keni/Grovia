@@ -1,0 +1,100 @@
+{
+  "project_name": "Grovia",
+  "theme": "Light",
+  "archetype": "Organic & Earthy (Modified for Premium High-Contrast E-commerce)",
+  "tech_stack": {
+    "framework": "React.js",
+    "styling": "Vanilla CSS (Strictly separate .css files per component/page)",
+    "restrictions": "NO Tailwind CSS, NO TypeScript, NO Emojis"
+  },
+  "typography": {
+    "heading_font": "'Outfit', sans-serif",
+    "body_font": "'Manrope', sans-serif",
+    "import_statement": "@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600&family=Outfit:wght@500;700;800&display=swap');",
+    "hierarchy": {
+      "h1": "font-family: 'Outfit'; font-size: 3.5rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text-main);",
+      "h2": "font-family: 'Outfit'; font-size: 2.5rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text-main);",
+      "h3": "font-family: 'Outfit'; font-size: 1.5rem; font-weight: 700; color: var(--text-main);",
+      "body": "font-family: 'Manrope'; font-size: 1rem; line-height: 1.6; color: var(--text-muted);"
+    }
+  },
+  "colors": {
+    "primary": "#0B8C4C",
+    "primary_hover": "#09733E",
+    "primary_light": "rgba(11, 140, 76, 0.1)",
+    "background": "#F4F7F5",
+    "surface": "#FFFFFF",
+    "text_main": "#1A1D1A",
+    "text_muted": "#6B726B",
+    "glass_bg": "rgba(255, 255, 255, 0.75)",
+    "glass_border": "rgba(255, 255, 255, 0.5)",
+    "glass_shadow": "0 12px 40px rgba(11, 140, 76, 0.08)",
+    "danger": "#EF4444",
+    "warning": "#F59E0B"
+  },
+  "design_patterns": {
+    "glassmorphism": "background: var(--glass-bg); backdrop-filter: blur(24px); -webkit-backdrop-filter: blur(24px); border: 1px solid var(--glass-border); border-radius: 20px; box-shadow: var(--glass-shadow);",
+    "glassmorphism_dark": "background: rgba(0, 0, 0, 0.4); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 20px;",
+    "hover_effect": "transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.3s ease;",
+    "hover_active": "transform: translateY(-6px); box-shadow: 0 20px 40px rgba(11, 140, 76, 0.12);",
+    "animations": {
+      "floating_grocery": "@keyframes float { 0% { transform: translateY(0px) translateX(0px) rotate(0deg); } 33% { transform: translateY(-30px) translateX(10px) rotate(5deg); } 66% { transform: translateY(-10px) translateX(-10px) rotate(-5deg); } 100% { transform: translateY(0px) translateX(0px) rotate(0deg); } }"
+    }
+  },
+  "components": {
+    "buttons": {
+      "primary": "background: var(--primary); color: white; border: none; border-radius: 14px; padding: 16px 32px; font-weight: 600; font-family: 'Manrope'; cursor: pointer; transition: all 0.3s ease; box-shadow: 0 4px 12px rgba(11, 140, 76, 0.2);",
+      "primary_hover": "background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(11, 140, 76, 0.3);"
+    },
+    "cards": {
+      "product_card": "Apply glassmorphism. Layout: Image wrapper at top with border-radius, followed by title, description, price (Rs) at bottom. Add primary Add-to-cart button."
+    },
+    "inputs": {
+      "default": "background: rgba(255, 255, 255, 0.9); border: 1px solid rgba(0,0,0,0.1); border-radius: 12px; padding: 16px; font-family: 'Manrope'; transition: all 0.2s ease; width: 100%;",
+      "focus": "border-color: var(--primary); outline: none; box-shadow: 0 0 0 4px var(--primary-light);"
+    }
+  },
+  "pages_instructions": {
+    "login": {
+      "layout": "Full screen viewport. Background uses 'login_background' with a heavy overlay. Center the main login glass card. Provide inputs for Phone+OTP, and a Google Auth button.",
+      "animations": "Inject floating grocery images into the background. Use position: absolute and apply the floating animation with different animation-delays to make them float continuously."
+    },
+    "explore": {
+      "layout": "Sticky nav with Logo, Location Selector, Search bar, Profile icon. Below nav: horizontal scrollable category pills. Main section: CSS Grid of product cards.",
+      "features": "Fixed bottom floating cart bar (glassmorphic) that summarizes total cost and redirects to Cart."
+    },
+    "store_selection": {
+      "layout": "Split view or modal: Sidebar for list of nearby stores (cards with distance) and main area for a Google Map placeholder visualization."
+    },
+    "product_detail": {
+      "layout": "Clean two-column flex layout. Left: large high-quality product image container. Right: Title, exact Price (Rs), Description, Store Availability status, and Add to Cart action. Below: Related products row."
+    },
+    "cart": {
+      "layout": "Left column: items list with increment/decrement quantity controls. Right column: sticky Order Summary (price breakdown) and Checkout button."
+    },
+    "payment": {
+      "layout": "Forms for delivery address, radio buttons for Payment Methods (UPI, Card, COD). Right side: Order summary.",
+      "animations": "Add floating grocery items in random directions across the page. Success state modal uses premium glassmorphism."
+    },
+    "profile": {
+      "layout": "Sidebar navigation (Orders, Addresses, Wishlist, Refunds, Fav Store, Help). Right content area displays corresponding details in glassmorphism cards."
+    }
+  },
+  "media_assets": {
+    "login_background": "https://images.pexels.com/photos/8939514/pexels-photo-8939514.jpeg",
+    "floating_items": [
+      "https://images.unsplash.com/photo-1743000815887-8197d548c5ea",
+      "https://images.unsplash.com/photo-1630177134330-43383b181740",
+      "https://images.unsplash.com/photo-1579410137851-2f510f2d150f",
+      "https://images.unsplash.com/photo-1622528448260-39e8229eb10c"
+    ],
+    "categories": {
+      "fruits": "https://images.unsplash.com/photo-1615484477676-c6f3c18e8462",
+      "vegetables": "https://images.unsplash.com/photo-1579410137904-03cda8069b07"
+    },
+    "shopping_bag": "https://images.unsplash.com/photo-1574365569389-a10d488ca3fb"
+  },
+  "testing_requirements": {
+    "data_testid": "ALL interactive components, inputs, links, buttons, and critical information blocks MUST include a 'data-testid' attribute formatted in kebab-case (e.g., data-testid='login-submit-button', data-testid='add-to-cart')."
+  }
+}
