@@ -43,18 +43,12 @@ function AppContent() {
 }
 
 function App() {
-  const content = (
+  return (
     <AppProvider>
       <BrowserRouter>
         <AppContent />
       </BrowserRouter>
     </AppProvider>
-  );
-
-  return (
-    <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-      {content}
-    </GoogleOAuthProvider>
   );
 }
 

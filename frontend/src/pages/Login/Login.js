@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { GoogleLogin } from '@react-oauth/google';
+import { GoogleLogin, GoogleOAuthProvider } from '@react-oauth/google';
+
+const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID || '52752986857-qbja4qfmto0ppscgjoloutejfiggeb7l.apps.googleusercontent.com';
 import { useApp } from '../../context/AppContext';
 import { Phone, ArrowRight, ShieldCheck } from 'lucide-react';
 import FloatingGroceries from '../../components/FloatingGroceries/FloatingGroceries';
@@ -150,15 +152,17 @@ function Login() {
 
             <div className="google-login-wrapper" data-testid="google-login">
               {/* REMINDER: DO NOT HARDCODE THE URL, OR ADD ANY FALLBACKS OR REDIRECT URLS, THIS BREAKS THE AUTH */}
-              <GoogleLogin
-                onSuccess={handleGoogleSuccess}
-                onError={() => setError('Google login failed')}
-                width="100%"
-                theme="outline"
-                size="large"
-                text="continue_with"
-                shape="pill"
-              />
+              <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
+                <GoogleLogin
+                  onSuccess={handleGoogleSuccess}
+                  onError={() => setError('Google login failed')}
+                  width="100%"
+                  theme="outline"
+                  size="large"
+                  text="continue_with"
+                  shape="pill"
+                />
+              </GoogleOAuthProvider>
             </div>
           </div>
 
