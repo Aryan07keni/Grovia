@@ -102,22 +102,24 @@ function Login() {
         await window.confirmationResult.confirm(otp);
         const res = await axios.post(`${API}/auth/phone`, { phone: `+91${phone}`, otp: '123456' });
         login(res.data);
-        navigate('/');
-        setLoading(false);
+        window.location.href = '/';
         return;
       } catch (fbVerifyErr) {
-        console.warn('Firebase verify fallback:', fbVerifyErr);
+        console.warn('Firebase verify error:', fbVerifyErr);
+        setError(fbVerifyErr.message || 'Incorrect OTP code');
+        setLoading(false);
+        return;
       }
     }
 
     try {
       const res = await axios.post(`${API}/auth/phone`, { phone: `+91${phone}`, otp });
       login(res.data);
-      navigate('/');
+      window.location.href = '/';
     } catch (e) {
-      setError(e.response?.data?.detail || 'Invalid or expired OTP');
+      setError(e.response?.data?.detail || e.message || 'Invalid or expired OTP');
+      setLoading(false);
     }
-    setLoading(false);
   };
 
   return (
