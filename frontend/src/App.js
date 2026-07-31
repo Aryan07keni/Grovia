@@ -14,7 +14,7 @@ import StoreSelection from './pages/StoreSelection/StoreSelection';
 import CartBar from './components/CartBar/CartBar';
 import './App.css';
 
-const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID;
+const GOOGLE_CLIENT_ID = process.env.REACT_APP_GOOGLE_CLIENT_ID || '52752986857-qbja4qfmto0ppscgjoloutejfiggeb7l.apps.googleusercontent.com';
 
 function AppContent() {
   const { user } = useApp();
@@ -43,13 +43,17 @@ function AppContent() {
 }
 
 function App() {
+  const content = (
+    <AppProvider>
+      <BrowserRouter>
+        <AppContent />
+      </BrowserRouter>
+    </AppProvider>
+  );
+
   return (
     <GoogleOAuthProvider clientId={GOOGLE_CLIENT_ID}>
-      <AppProvider>
-        <BrowserRouter>
-          <AppContent />
-        </BrowserRouter>
-      </AppProvider>
+      {content}
     </GoogleOAuthProvider>
   );
 }

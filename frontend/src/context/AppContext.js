@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import axios from 'axios';
 
-const AppContext = createContext();
-const API = `${process.env.REACT_APP_BACKEND_URL}/api`;
+const rawBackend = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000';
+const BACKEND = rawBackend.endsWith('/api') ? rawBackend.slice(0, -4) : rawBackend;
+const API = `${BACKEND.replace(/\/$/, '')}/api`;
 
 export function AppProvider({ children }) {
   const [user, setUser] = useState(null);
