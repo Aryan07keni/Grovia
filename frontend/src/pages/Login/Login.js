@@ -31,6 +31,22 @@ function Login() {
     return () => clearInterval(interval);
   }, [otpSent, timer]);
 
+  useEffect(() => {
+    if (!otpSent && !window.recaptchaVerifier) {
+      try {
+        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+          size: 'normal',
+          callback: () => {
+            console.log('reCAPTCHA solved');
+          }
+        });
+        window.recaptchaVerifier.render();
+      } catch (err) {
+        console.warn('Recaptcha render warning:', err);
+      }
+    }
+  }, [otpSent]);
+
   if (user) { navigate('/'); return null; }
 
   const handleGoogleSuccess = async (credentialResponse) => {
@@ -46,51 +62,30 @@ function Login() {
     setLoading(false);
   };
 
-  const setupRecaptcha = () => {
-    if (!window.recaptchaVerifier) {
-      try {
-        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
-          size: 'normal',
-          callback: (response) => {
-            console.log('reCAPTCHA verified for dynamic SMS:', response);
-          }
-        });
-      } catch (err) {
-        console.warn('Recaptcha init warning:', err);
-      }
-    }
-  };
-
   const handleSendOtp = async () => {
     if (phone.length < 10) { setError('Enter a valid 10-digit phone number'); return; }
     setLoading(true);
     setError('');
     
-    let sentViaFirebase = false;
     try {
-      setupRecaptcha();
-      if (window.recaptchaVerifier) {
-        const confirmationResult = await signInWithPhoneNumber(auth, `+91${phone}`, window.recaptchaVerifier);
-        window.confirmationResult = confirmationResult;
-        sentViaFirebase = true;
+      if (!window.recaptchaVerifier) {
+        window.recaptchaVerifier = new RecaptchaVerifier(auth, 'recaptcha-container', {
+          size: 'normal'
+        });
       }
+      const confirmationResult = await signInWithPhoneNumber(auth, `+91${phone}`, window.recaptchaVerifier);
+      window.confirmationResult = confirmationResult;
+      setOtpSent(true);
+      setTimer(30);
+      setOtp('');
     } catch (fbErr) {
-      console.warn('Firebase SMS fallback to API:', fbErr.message);
-    }
-
-    if (!sentViaFirebase) {
-      try {
-        await axios.post(`${API}/auth/phone`, { phone: `+91${phone}` });
-      } catch (e) {
-        setError('Failed to send OTP. Please try again.');
-        setLoading(false);
-        return;
+      console.error('Firebase SMS error:', fbErr);
+      setError(fbErr.message || fbErr.code || 'Failed to send SMS OTP');
+      if (window.recaptchaVerifier && window.recaptchaVerifier.clear) {
+        window.recaptchaVerifier.clear();
+        window.recaptchaVerifier = null;
       }
     }
-
-    setOtpSent(true);
-    setTimer(30);
-    setOtp('');
     setLoading(false);
   };
 
